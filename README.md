@@ -10,7 +10,7 @@
 
 ## 当前状态
 
-- 2026-11-03：工作区与执行计划已建立；[阶段性研究](research/report.md)、[概念产品方案](product/solution.md)、四模块 H5 v0.1 和[本地 QA](QA.md)已完成首版。[T01/T02 限定条件结果与 T09 线索](research/test-results.md)已记录。真实客户端补充测试、GitHub 远端及小红书发布尚未完成。
+- 2026-11-03：工作区与执行计划已建立；[阶段性研究](research/report.md)、[概念产品方案](product/solution.md)、四模块 H5 v0.1 和[本地 QA](QA.md)已完成首版。[T01/T02 限定条件结果与 T09 线索](research/test-results.md)已记录。[GitHub 私有仓库](https://github.com/iJessieA1X/DOTS-CONTINUITY-LAB)的 `main` 已推送。真实客户端补充测试与小红书发布尚未完成。
 - 详细范围、阶段、验收标准与环境记录见 [PLAN.md](PLAN.md)。
 
 ## 运行 H5
