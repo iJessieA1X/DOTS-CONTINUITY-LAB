@@ -45,7 +45,7 @@
 | 2. Product definition | 用户旅程、History / Context / Execution PRD、架构与数据模型、指标、风险 | 每个核心功能有场景、数据状态和验收方式 | 首版完成；P0 最小实施切片已明确，待刷新条件校准现状描述 |
 | 3. H5 build | 先做 Conversation Handoff，再做 Agent Continuity、Sync Diagnostic、Metrics Dashboard；使用本地模拟数据 | 四模块可操作，状态与反馈明确 | 首版完成 |
 | 4. QA & packaging | 桌面/手机视口、刷新恢复、关键流程与指标计算验证；整理 README、源码、演示素材和已知限制 | 本地构建与关键旅程通过，可复现 | 本地完成；Pages 工作流仅为不触发的模板，详见 [QA.md](QA.md)，实体 iPhone Safari 未验收 |
-| 5. Public launch | 准备 GitHub 公开、H5 展示及小红书图文，核对来源与链接 | 用户审定并授权后执行公开动作；记录实际链接与反馈 | 主对话公开分享已完成；妳现授权先建私有 GitHub 仓库，H5 与帖子不发布 |
+| 5. Public launch | 准备 GitHub 公开、H5 展示及小红书图文，核对来源与链接 | 用户审定并授权后执行公开动作；记录实际链接与反馈 | 主对话公开分享已完成；妳现授权先建私有 GitHub 仓库，待 GitHub 登录完成；H5 与帖子不发布 |
 
 ### 第一手测试的最小矩阵
 
@@ -74,4 +74,4 @@ Phase 1 在 [research/evidence-ledger.md](research/evidence-ledger.md) 建立台
 - `D:\AIdev\30_Projects` 原有四个项目；DOTS 专属子目录建立前不存在，也未发现同名项目。早期建议的 `D:\Code\DOTS-Continuity-Lab` 与 `D:\Studio\projects\personal\DOTS-Continuity-Lab` 均不存在。
 - 本机：Node `v24.14.0`、npm `11.9.0`、pnpm `11.25.0`、Git `2.53.0.windows.1`、GitHub CLI `2.93.0`；yarn 未发现。`app` 已安装依赖，`npm run build` 通过；本地浏览器关键流程通过。
 - React Doctor 0.9.22 扫描 3 个文件得 92/100，唯一提示为 `src/App.tsx` 主函数控制流复杂度；目前是可维护性提示，未观察到功能故障，后续拆组件时处理。
-- 本地 Git `main` 已初始化；私有远端仓库待建立。T01/T02 已有同账号限定条件结果；数字版本、刷新结果和 T03–T08 未验证。国内模型交叉询问按用户纠偏暂缓。390 × 844 手机浏览器视口已验收，实体 iPhone Safari 和公开链接未验证。
+- 本地 Git `main` 已提交 `fb3dc1e`；私有远端仓库待建立。`gh` CLI token 已失效，Chrome 与内置浏览器均要求重新登录；已请妳在 Chrome 登录页自行完成认证。T01/T02 已有同账号限定条件结果；数字版本、刷新结果和 T03–T08 未验证。国内模型交叉询问按用户纠偏暂缓。390 × 844 手机浏览器视口已验收，实体 iPhone Safari 和公开链接未验证。
