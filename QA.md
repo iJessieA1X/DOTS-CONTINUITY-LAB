@@ -41,4 +41,6 @@ npm run dev
 - 浏览器 LocalStorage 只覆盖该浏览器；清除站点数据会重置进度。未验证跨真实设备同步。
 - 真正的 T01/T02 测试结果及未记录条件见 [test-results.md](research/test-results.md)；H5 验收不能替代真实客户端测试。
 
-演示截图：[桌面首屏](assets/h5-desktop-hero.png)、[接力结果](assets/h5-handoff-restored.png)、[手机首屏](assets/h5-mobile-hero.png)。
+2026-11-11 视觉方向收口：移除四版切换，仅保留「暖色批注」。`npm run build -- --base=/DOTS-CONTINUITY-LAB/` 通过（30 个模块）；本地 Chrome 核对桌面接力可恢复同一虚构会话、目标和约束，页面仍标明本地模拟。390px 手机宽度下无切换栏、无横向溢出，接力按钮和电脑结果可见。实体 iPhone Safari 仍未验收。
+
+选定视觉方向时的截图：[桌面首屏](review/notes-desktop.png)、[接力结果](review/notes-handoff.png)、[手机首屏](review/notes-mobile.png)、[手机接力结果](review/notes-mobile-handoff.png)。截图仍包含当时的版本切换栏；发布页以在线演示为准。

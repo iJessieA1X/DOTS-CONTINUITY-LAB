@@ -25,6 +25,7 @@
 5. 用户原创原则「好的设计，是熵减与解放」用于交互决策：降低寻找信息和重复操作的成本，释放注意力，同时保留用户的选择、修正与控制权。Business Value 与 Human Value 并行衡量。
 6. 对话与模型输出只提供研究线索；公开事实、用户实测、社区反馈、推断与模拟数据分别标记。未经证据验证，不推断点点内部架构或普遍故障。
 7. ChatGPT 产品端确认 **P-001**：Conversation Handoff 是首个端到端里程碑，完整演示「手机开启对话→保留历史与引用→切换电脑→恢复上下文→继续交互」。**P-002**：点点真实行为须有测试或原始来源；H5 与 README 明示所有同步和 Agent 状态为概念模拟。这两项均在 v0.3 范围内。
+8. 2026-11-11 妳从五个 H5 视觉实验中选择「暖色批注」为唯一展示版；四版对照与切换栏从当前页面移除。视觉方向见 [DESIGN.md](DESIGN.md)。
 
 ## 四项交付与完成标准
 
@@ -43,7 +44,7 @@
 | 1. Research & diagnosis | T01/T02 同账号双向新会话测试、必要来源与证据分级；其余测试按是否改变方案决定 | 核心观察有边界，未知项标明 | 核心证据已有；刷新条件待补 |
 | 2. Product definition | 用户旅程、History / Context / Execution PRD、架构与数据模型、指标、风险 | 每个核心功能有场景、数据状态和验收方式 | 首版完成；P0 最小实施切片已明确，待刷新条件校准现状描述 |
 | 3. H5 build | 先做 Conversation Handoff，再做 Agent Continuity、Sync Diagnostic、Metrics Dashboard；使用本地模拟数据 | 四模块可操作，状态与反馈明确 | 首版完成 |
-| 4. QA & packaging | 桌面/手机视口、刷新恢复、关键流程与指标计算验证；整理 README、源码、演示素材和已知限制 | 本地构建与关键旅程通过，可复现 | 本地完成；Pages 工作流仅为不触发的模板，详见 [QA.md](QA.md)，实体 iPhone Safari 未验收 |
+| 4. QA & packaging | 桌面/手机视口、刷新恢复、关键流程与指标计算验证；整理 README、源码、演示素材和已知限制 | 本地构建与关键旅程通过，可复现 | 本地完成；Pages 工作流已启用，详见 [QA.md](QA.md)，实体 iPhone Safari 未验收 |
 | 5. Public launch | 公开 GitHub 项目与 H5 演示，核对来源和访问链接 | 仓库与演示页面可公开访问；记录实际链接 | 已完成：[仓库](https://github.com/iJessieA1X/DOTS-CONTINUITY-LAB)与[H5](https://ijessiea1x.github.io/DOTS-CONTINUITY-LAB/)均可访问；小红书发帖已取消 |
 
 ### 第一手测试的最小矩阵
