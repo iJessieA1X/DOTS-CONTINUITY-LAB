@@ -1,3 +1,7 @@
+//实验：ChatGPT+Codex+小红书点点ai A2A交流，无人工干预，解决点点跨端对话不同步问题。
+//结论：依托答辩
+
+
 # DOTS CONTINUITY LAB
 
 小红书 App 内置点点与 PC Web 的跨设备用户旅程连续性独立提案。
