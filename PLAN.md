@@ -33,7 +33,7 @@
 | Product Research Report | T01/T02 结果、必要的官方来源、最低限度竞品参照与 Evidence Ledger | 核心判断可追溯；不为凑覆盖面扩充调研 |
 | Product Solution | P0 同一会话双向接力为核心；Context / Execution 是后续扩展 | P0 场景、状态、失败反馈和验收条件清晰；内部架构仍是建议 |
 | Interactive H5 | 双设备接力、三层状态、诊断流程和指标 Demo | 四个模块可操作；手机与桌面布局可用；刷新可恢复 Demo 状态；模拟数据标识清楚 |
-| GitHub Project | 可运行源码、README、研究与方案、验证说明、演示素材 | `main` 已推送；公开前检查已完成，仓库可公开访问后再标记完成 |
+| GitHub Project | 可运行源码、README、研究与方案、验证说明、演示素材 | [仓库](https://github.com/iJessieA1X/DOTS-CONTINUITY-LAB)已公开，`main` 可访问 |
 
 ## 阶段计划
 
@@ -44,7 +44,7 @@
 | 2. Product definition | 用户旅程、History / Context / Execution PRD、架构与数据模型、指标、风险 | 每个核心功能有场景、数据状态和验收方式 | 首版完成；P0 最小实施切片已明确，待刷新条件校准现状描述 |
 | 3. H5 build | 先做 Conversation Handoff，再做 Agent Continuity、Sync Diagnostic、Metrics Dashboard；使用本地模拟数据 | 四模块可操作，状态与反馈明确 | 首版完成 |
 | 4. QA & packaging | 桌面/手机视口、刷新恢复、关键流程与指标计算验证；整理 README、源码、演示素材和已知限制 | 本地构建与关键旅程通过，可复现 | 本地完成；Pages 工作流仅为不触发的模板，详见 [QA.md](QA.md)，实体 iPhone Safari 未验收 |
-| 5. Public launch | 公开 GitHub 项目与 H5 演示，核对来源和访问链接 | 仓库与演示页面可公开访问；记录实际链接 | 两段来源对话的公开分享均已核对；仓库与 H5 公开实施中；小红书发帖已取消 |
+| 5. Public launch | 公开 GitHub 项目与 H5 演示，核对来源和访问链接 | 仓库与演示页面可公开访问；记录实际链接 | 已完成：[仓库](https://github.com/iJessieA1X/DOTS-CONTINUITY-LAB)与[H5](https://ijessiea1x.github.io/DOTS-CONTINUITY-LAB/)均可访问；小红书发帖已取消 |
 
 ### 第一手测试的最小矩阵
 
@@ -73,4 +73,4 @@ Phase 1 在 [research/evidence-ledger.md](research/evidence-ledger.md) 建立台
 - `D:\AIdev\30_Projects` 原有四个项目；DOTS 专属子目录建立前不存在，也未发现同名项目。早期建议的 `D:\Code\DOTS-Continuity-Lab` 与 `D:\Studio\projects\personal\DOTS-Continuity-Lab` 均不存在。
 - 本机：Node `v24.14.0`、npm `11.9.0`、pnpm `11.25.0`、Git `2.53.0.windows.1`、GitHub CLI `2.93.0`；yarn 未发现。`app` 已安装依赖，`npm run build` 通过；本地浏览器关键流程通过。
 - React Doctor 0.9.22 扫描 3 个文件得 92/100，唯一提示为 `src/App.tsx` 主函数控制流复杂度；目前是可维护性提示，未观察到功能故障，后续拆组件时处理。
-- 本地 Git `main` 已推送至 `iJessieA1X/DOTS-CONTINUITY-LAB`；2026-11-11 公开前核对远端 `visibility: private`。妳随后决定公开项目与 H5、取消发帖；指出 Demo 难懂后，首页已改为直接说明操作与模拟边界。T01/T02 已有同账号限定条件结果；数字版本、刷新结果和 T03–T08 未验证。国内模型交叉询问按用户纠偏暂缓。390 × 844 手机浏览器视口已验收，实体 iPhone Safari 和公开 H5 链接未验证。
+- 本地 Git `main` 已推送至 `iJessieA1X/DOTS-CONTINUITY-LAB`；2026-11-11 远端已改为 `visibility: public`，GitHub Pages 工作流通过，公开 H5 首页已在 Chrome 打开核对。妳决定不发小红书帖子；指出 Demo 难懂后，首页已改为直接说明操作与模拟边界。T01/T02 已有同账号限定条件结果；数字版本、刷新结果和 T03–T08 未验证。国内模型交叉询问按用户纠偏暂缓。390 × 844 手机浏览器视口已验收，实体 iPhone Safari 未验收。

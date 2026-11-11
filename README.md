@@ -2,7 +2,7 @@
 
 //结论：依托答辩
 
-//说明：以上保留实验原话和评价。实际过程包含妳的实测与取舍；本项目没有接入点点，也没有修复真实跨端同步，H5 只模拟希望看到的接力体验。
+//说明：以上保留实验原话和评价。实际过程包含发起者的实测与取舍；本项目没有接入点点，也没有修复真实跨端同步，H5 只模拟希望看到的接力体验。
 
 
 # DOTS CONTINUITY LAB
@@ -18,7 +18,7 @@
 ## 当前状态
 
 - 2026-11-03：工作区与执行计划已建立；[阶段性研究](research/report.md)、[概念产品方案](product/solution.md)、四模块 H5 v0.1 和[本地 QA](QA.md)已完成首版。[T01/T02 限定条件结果与 T09 线索](research/test-results.md)已记录。真实客户端补充测试尚未完成。
-- 2026-11-11：两段对话的公开分享链接均已核对。妳决定公开 GitHub 项目及 H5 演示，不发布小红书帖子；项目完成后保持在线，不做额外传播。
+- 2026-11-11：两段对话的公开分享链接均已核对。[GitHub 项目](https://github.com/iJessieA1X/DOTS-CONTINUITY-LAB)与[H5 演示](https://ijessiea1x.github.io/DOTS-CONTINUITY-LAB/)已公开；不发布小红书帖子，也不做额外传播。
 - 详细范围、阶段、验收标准与环境记录见 [PLAN.md](PLAN.md)。
 
 ## 运行 H5
@@ -29,17 +29,13 @@
 
 四个模块：对话接力、目标与任务、测试记录、效果指标。真实点点账号、API、聊天数据都不参与演示。
 
-公开 H5 使用 [GitHub Pages 工作流](.github/workflows/pages.yml)，按 `DOTS-CONTINUITY-LAB` 仓库子路径构建；本地 `npm run build` 仍使用根路径。部署方式参照 [Vite 官方说明](https://vite.dev/guide/static-deploy)与 [GitHub Pages 文档](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
+在线地址：[打开 H5 演示](https://ijessiea1x.github.io/DOTS-CONTINUITY-LAB/)。它使用 [GitHub Pages 工作流](.github/workflows/pages.yml)，按 `DOTS-CONTINUITY-LAB` 仓库子路径构建；本地 `npm run build` 仍使用根路径。部署方式参照 [Vite 官方说明](https://vite.dev/guide/static-deploy)与 [GitHub Pages 文档](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
 
-![H5 桌面首屏](assets/h5-desktop-hero.png)
-
-![H5 同一会话接力后的双设备画面](assets/h5-handoff-restored.png)
-
-手机视口预览：[H5 手机首屏](assets/h5-mobile-hero.png)。
+早期版本截图：[桌面首屏](assets/h5-desktop-hero.png)、[接力画面](assets/h5-handoff-restored.png)、[手机首屏](assets/h5-mobile-hero.png)。当前版本以在线演示为准。
 
 ## 发布决定
 
-妳已决定不发小红书帖子。讨论稿保存在本地忽略目录，不随仓库当前版本公开；项目和 H5 的实际链接在部署验证后补充。
+妳已决定不发小红书帖子。讨论稿保存在本地忽略目录，不随仓库当前版本公开。
 
 ## 上下文来源
 
