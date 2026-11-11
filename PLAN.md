@@ -6,7 +6,7 @@
 
 围绕小红书 App 内置点点与 PC Web，提出可验证的跨设备用户旅程连续性方案，并用可交互 H5 展示体验。最终形成五项可独立展示的成果：产品研究报告、产品方案、交互 H5、可复现的 GitHub 项目材料、小红书发布稿。GitHub 公开与小红书发帖由用户最终决定。
 
-成功不以官方是否回复为唯一标准；作品本身应清楚证明产品洞察、证据判断、方案设计和 AI building 能力。2026-11-11 妳已授权仓库和两段来源对话公开；小红书图文尚未发布。
+成功不以官方是否回复为唯一标准；作品本身应清楚证明产品洞察、证据判断、方案设计和 AI building 能力。2026-11-11 妳决定先讨论帖子文案，GitHub 仓库继续保持私有；小红书图文尚未发布。
 
 ## 当前最短路径（用户 2026-11-03 纠偏）
 
@@ -45,7 +45,7 @@
 | 2. Product definition | 用户旅程、History / Context / Execution PRD、架构与数据模型、指标、风险 | 每个核心功能有场景、数据状态和验收方式 | 首版完成；P0 最小实施切片已明确，待刷新条件校准现状描述 |
 | 3. H5 build | 先做 Conversation Handoff，再做 Agent Continuity、Sync Diagnostic、Metrics Dashboard；使用本地模拟数据 | 四模块可操作，状态与反馈明确 | 首版完成 |
 | 4. QA & packaging | 桌面/手机视口、刷新恢复、关键流程与指标计算验证；整理 README、源码、演示素材和已知限制 | 本地构建与关键旅程通过，可复现 | 本地完成；Pages 工作流仅为不触发的模板，详见 [QA.md](QA.md)，实体 iPhone Safari 未验收 |
-| 5. Public launch | 准备 GitHub 公开、H5 展示及小红书图文，核对来源与链接 | 用户审定并授权后执行公开动作；记录实际链接与反馈 | 主对话已有公开分享；第二段整段分享链接待生成；仓库公开已获授权，H5 与帖子未发布 |
+| 5. Public launch | 准备 GitHub 公开、H5 展示及小红书图文，核对来源与链接 | 用户审定并授权后执行公开动作；记录实际链接与反馈 | 两段来源对话的公开分享均已核对；仓库按用户最新决定保持私有，先讨论帖子；H5 与帖子未发布 |
 
 ### 第一手测试的最小矩阵
 
@@ -66,7 +66,7 @@ Phase 1 在 [research/evidence-ledger.md](research/evidence-ledger.md) 建立台
 - 用户：真实点点客户端操作、产品取舍、H5 验收、公开发布的最终决定。
 - ChatGPT 主对话：产品与研究讨论、证据和方案审查、传播表达；每次关键产品变更同步到本地计划。
 - Codex：本地工程、必要研究核验、H5 实现、测试与结构化交接；每个阶段把变更、验证、结果和未解决项同步到主对话。
-- 对话互通采用用户指定的主 ChatGPT 对话；其[完整公开分享](https://chatgpt.com/share/6ae9d3c8-51bc-83ec-89b7-acd2607ebd0c)已建立。[第二段设计哲学原对话](https://chatgpt.com/c/6ae99782-d898-83ec-8c01-f0ea8a656844)也获妳授权公开，整段分享链接待生成；原对话地址本身无法供外部读者访问。ChatGPT 的回复作为协作输入，用户的新指令与本地验证结果决定执行基线。
+- 对话互通采用用户指定的[主 ChatGPT 对话公开分享](https://chatgpt.com/share/6af41a91-09bc-83e8-82b1-e88d1a033244)，[第二段设计哲学公开分享](https://chatgpt.com/share/6af3eec9-e174-83e8-8bd5-d22693dc18a7)提供设计原则。2026-11-11 已核对两页标题与内容。ChatGPT 的回复作为协作输入，用户的新指令与本地验证结果决定执行基线。
 - 创建远端仓库、部署公开站点、发帖、发送给第三方、权限和系统配置变更，在具体成果准备好后按用户授权执行。
 
 ## Phase 0 环境记录
@@ -74,4 +74,4 @@ Phase 1 在 [research/evidence-ledger.md](research/evidence-ledger.md) 建立台
 - `D:\AIdev\30_Projects` 原有四个项目；DOTS 专属子目录建立前不存在，也未发现同名项目。早期建议的 `D:\Code\DOTS-Continuity-Lab` 与 `D:\Studio\projects\personal\DOTS-Continuity-Lab` 均不存在。
 - 本机：Node `v24.14.0`、npm `11.9.0`、pnpm `11.25.0`、Git `2.53.0.windows.1`、GitHub CLI `2.93.0`；yarn 未发现。`app` 已安装依赖，`npm run build` 通过；本地浏览器关键流程通过。
 - React Doctor 0.9.22 扫描 3 个文件得 92/100，唯一提示为 `src/App.tsx` 主函数控制流复杂度；目前是可维护性提示，未观察到功能故障，后续拆组件时处理。
-- 本地 Git `main` 已推送至 `iJessieA1X/DOTS-CONTINUITY-LAB`；2026-11-11 公开前核对远端仍为 `visibility: private`，妳已授权改为 public。T01/T02 已有同账号限定条件结果；数字版本、刷新结果和 T03–T08 未验证。国内模型交叉询问按用户纠偏暂缓。390 × 844 手机浏览器视口已验收，实体 iPhone Safari 和公开 H5 链接未验证。
+- 本地 Git `main` 已推送至 `iJessieA1X/DOTS-CONTINUITY-LAB`；2026-11-11 核对远端 `visibility: private`。公开切换未执行，妳选择继续保持私有。T01/T02 已有同账号限定条件结果；数字版本、刷新结果和 T03–T08 未验证。国内模型交叉询问按用户纠偏暂缓。390 × 844 手机浏览器视口已验收，实体 iPhone Safari 和公开 H5 链接未验证。
