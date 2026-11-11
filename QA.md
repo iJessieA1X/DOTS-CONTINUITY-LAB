@@ -30,9 +30,9 @@ npm run dev
 
 同日修正指标口径后再次构建通过（29 个模块），浏览器切换示例 A/B 核对了恢复率与中位数，再恢复默认展示。
 
-2026-11-03 GitHub Pages 工作流模板使用 `npm run build -- --base=/DOTS-CONTINUITY-LAB/`；本地执行该命令成功（29 个模块），生成的 `dist/index.html` 资产路径均以 `/DOTS-CONTINUITY-LAB/` 开头。模板当时放在 `deploy/pages.example.yml`，未触发部署。2026-11-11 已准备实际工作流 `.github/workflows/pages.yml`，远端部署与公开 URL 尚未运行或验证。
+2026-11-03 GitHub Pages 工作流模板使用 `npm run build -- --base=/DOTS-CONTINUITY-LAB/`；本地执行该命令成功（29 个模块），生成的 `dist/index.html` 资产路径均以 `/DOTS-CONTINUITY-LAB/` 开头。2026-11-11 已准备实际工作流 `.github/workflows/pages.yml`，远端部署与公开 URL 尚未运行或验证。
 
-2026-11-11 用户指出看不懂 Demo 后，首页改为明确说明「虚构聊天、左边手机、右边电脑、点按钮恢复」，并强调没有修复真实同步。Chrome 中验证「从头看手机 → 电脑演示」重置到手机初始状态，再点「在电脑继续」可在右侧看到同一段消息、目标和约束；`npm run build -- --base=/DOTS-CONTINUITY-LAB/` 再次通过（29 个模块）。是否公开 H5 由用户看过新版后决定。
+2026-11-11 用户指出看不懂 Demo 后，首页改为明确说明「虚构聊天、左边手机、右边电脑、点按钮恢复」，并强调没有修复真实同步。Chrome 中验证「从头看手机 → 电脑演示」重置到手机初始状态，再点「在电脑继续」可在右侧看到同一段消息、目标和约束；`npm run build -- --base=/DOTS-CONTINUITY-LAB/` 再次通过（29 个模块）。妳已决定公开这版 H5；实际在线访问仍待部署验证。
 
 ## 当前限制
 

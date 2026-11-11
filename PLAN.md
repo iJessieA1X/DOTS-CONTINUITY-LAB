@@ -6,7 +6,7 @@
 
 围绕小红书 App 内置点点与 PC Web，提出可验证的跨设备用户旅程连续性方案，并用可交互 H5 展示体验。最终形成四项可独立展示的成果：产品研究报告、产品方案、交互 H5、可复现的 GitHub 项目材料。原计划的小红书发布稿已由妳取消。
 
-成功不以官方是否回复为唯一标准；作品本身应清楚证明产品洞察、证据判断、方案设计和 AI building 能力。2026-11-11 妳决定公开 GitHub 项目及 H5，不发小红书图文。
+成功不以官方是否回复为唯一标准；作品本身应清楚证明产品洞察、证据判断、方案设计和 AI building 能力。2026-11-11 妳决定公开 GitHub 项目与 H5 演示，不发小红书图文，也不做额外传播。
 
 ## 当前最短路径（用户 2026-11-03 纠偏）
 
@@ -44,7 +44,7 @@
 | 2. Product definition | 用户旅程、History / Context / Execution PRD、架构与数据模型、指标、风险 | 每个核心功能有场景、数据状态和验收方式 | 首版完成；P0 最小实施切片已明确，待刷新条件校准现状描述 |
 | 3. H5 build | 先做 Conversation Handoff，再做 Agent Continuity、Sync Diagnostic、Metrics Dashboard；使用本地模拟数据 | 四模块可操作，状态与反馈明确 | 首版完成 |
 | 4. QA & packaging | 桌面/手机视口、刷新恢复、关键流程与指标计算验证；整理 README、源码、演示素材和已知限制 | 本地构建与关键旅程通过，可复现 | 本地完成；Pages 工作流仅为不触发的模板，详见 [QA.md](QA.md)，实体 iPhone Safari 未验收 |
-| 5. Public launch | 公开 GitHub 项目与 H5，核对来源和访问链接 | 仓库与演示页面均可公开访问；记录实际链接 | 两段来源对话的公开分享均已核对；仓库与 H5 公开实施中；小红书发帖已取消 |
+| 5. Public launch | 公开 GitHub 项目与 H5 演示，核对来源和访问链接 | 仓库与演示页面可公开访问；记录实际链接 | 两段来源对话的公开分享均已核对；仓库与 H5 公开实施中；小红书发帖已取消 |
 
 ### 第一手测试的最小矩阵
 
@@ -73,4 +73,4 @@ Phase 1 在 [research/evidence-ledger.md](research/evidence-ledger.md) 建立台
 - `D:\AIdev\30_Projects` 原有四个项目；DOTS 专属子目录建立前不存在，也未发现同名项目。早期建议的 `D:\Code\DOTS-Continuity-Lab` 与 `D:\Studio\projects\personal\DOTS-Continuity-Lab` 均不存在。
 - 本机：Node `v24.14.0`、npm `11.9.0`、pnpm `11.25.0`、Git `2.53.0.windows.1`、GitHub CLI `2.93.0`；yarn 未发现。`app` 已安装依赖，`npm run build` 通过；本地浏览器关键流程通过。
 - React Doctor 0.9.22 扫描 3 个文件得 92/100，唯一提示为 `src/App.tsx` 主函数控制流复杂度；目前是可维护性提示，未观察到功能故障，后续拆组件时处理。
-- 本地 Git `main` 已推送至 `iJessieA1X/DOTS-CONTINUITY-LAB`；2026-11-11 公开前核对远端 `visibility: private`。妳随后决定公开项目与 H5，取消发帖。T01/T02 已有同账号限定条件结果；数字版本、刷新结果和 T03–T08 未验证。国内模型交叉询问按用户纠偏暂缓。390 × 844 手机浏览器视口已验收，实体 iPhone Safari 和公开 H5 链接未验证。
+- 本地 Git `main` 已推送至 `iJessieA1X/DOTS-CONTINUITY-LAB`；2026-11-11 公开前核对远端 `visibility: private`。妳随后决定公开项目与 H5、取消发帖；指出 Demo 难懂后，首页已改为直接说明操作与模拟边界。T01/T02 已有同账号限定条件结果；数字版本、刷新结果和 T03–T08 未验证。国内模型交叉询问按用户纠偏暂缓。390 × 844 手机浏览器视口已验收，实体 iPhone Safari 和公开 H5 链接未验证。
