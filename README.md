@@ -10,8 +10,8 @@
 
 ## 当前状态
 
-- 2026-11-03：工作区与执行计划已建立；[阶段性研究](research/report.md)、[概念产品方案](product/solution.md)、四模块 H5 v0.1 和[本地 QA](QA.md)已完成首版。[T01/T02 限定条件结果与 T09 线索](research/test-results.md)已记录。真实客户端补充测试与小红书发布尚未完成。
-- 2026-11-11：妳决定在讨论小红书帖子前继续保持 GitHub 仓库私有。两段对话的公开分享链接均已核对，可从下方打开。
+- 2026-11-03：工作区与执行计划已建立；[阶段性研究](research/report.md)、[概念产品方案](product/solution.md)、四模块 H5 v0.1 和[本地 QA](QA.md)已完成首版。[T01/T02 限定条件结果与 T09 线索](research/test-results.md)已记录。真实客户端补充测试尚未完成。
+- 2026-11-11：两段对话的公开分享链接均已核对。妳决定公开项目与 H5，不发布小红书帖子；公开部署正在执行。
 - 详细范围、阶段、验收标准与环境记录见 [PLAN.md](PLAN.md)。
 
 ## 运行 H5
@@ -20,7 +20,7 @@
 
 四个模块：Conversation Handoff、Agent Continuity、Sync Diagnostic、Metrics Dashboard。真实点点账号、API、聊天数据都不参与演示。
 
-若之后决定公开 H5，可将 [Pages 工作流模板](deploy/pages.example.yml)放到 `.github/workflows/pages.yml`，并在仓库 Settings → Pages 将 Source 设为 GitHub Actions。模板按 `DOTS-CONTINUITY-LAB` 仓库子路径构建；本地 `npm run build` 仍使用根路径。**模板当前不会触发部署**。部署方式参照 [Vite 官方说明](https://vite.dev/guide/static-deploy)与 [GitHub Pages 文档](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
+公开 H5 使用 [GitHub Pages 工作流](.github/workflows/pages.yml)，按 `DOTS-CONTINUITY-LAB` 仓库子路径构建；本地 `npm run build` 仍使用根路径。部署方式参照 [Vite 官方说明](https://vite.dev/guide/static-deploy)与 [GitHub Pages 文档](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
 
 ![H5 桌面首屏](assets/h5-desktop-hero.png)
 
@@ -28,9 +28,9 @@
 
 手机视口预览：[H5 手机首屏](assets/h5-mobile-hero.png)。
 
-## 发布稿
+## 发布决定
 
-[小红书图文草稿](publish/post-draft.md)正在讨论中。仓库保持私有，H5 与帖子均未公开发布。
+妳已决定不发小红书帖子。讨论稿保存在本地忽略目录，不随仓库公开；项目与 H5 的公开链接在部署验证后补充。
 
 ## 上下文来源
 
