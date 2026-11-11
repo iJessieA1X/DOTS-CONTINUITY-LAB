@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 type ModuleId = 'handoff' | 'continuity' | 'diagnostic' | 'metrics';
+type DesignId = 'editorial' | 'workbench' | 'notes' | 'signal' | 'calm';
 type Device = 'mobile' | 'desktop';
 type Message = { id: number; role: 'user' | 'assistant'; text: string; origin: Device; note?: string };
 type Layer = 'history' | 'context' | 'execution';
@@ -52,6 +53,18 @@ const modules: { id: ModuleId; number: string; title: string; label: string }[] 
   { id: 'diagnostic', number: '03', title: '测试记录', label: '手动排查' },
   { id: 'metrics', number: '04', title: '效果指标', label: '虚构示例' },
 ];
+const designs: { id: DesignId; name: string; description: string }[] = [
+  { id: 'editorial', name: '编辑手记', description: 'Frontend Design' },
+  { id: 'workbench', name: '产品工作台', description: 'Design Taste' },
+  { id: 'notes', name: '暖色批注', description: 'Esther Design' },
+  { id: 'signal', name: '信号路径', description: 'UI/UX Pro Max' },
+  { id: 'calm', name: '安静原生', description: 'Apple + Impeccable' },
+];
+
+function initialDesign(): DesignId {
+  const candidate = new URLSearchParams(window.location.search).get('design');
+  return designs.find(item => item.id === candidate)?.id ?? 'editorial';
+}
 
 function loadState(): LabState {
   try {
@@ -108,6 +121,7 @@ function median(values: number[]) {
 }
 
 function App() {
+  const [design, setDesign] = useState<DesignId>(initialDesign);
   const [lab, setLab] = useState<LabState>(loadState);
   const [draft, setDraft] = useState('');
   const [copied, setCopied] = useState(false);
@@ -150,6 +164,13 @@ function App() {
     setCopied(false);
   }
 
+  function chooseDesign(next: DesignId) {
+    setDesign(next);
+    const url = new URL(window.location.href);
+    url.searchParams.set('design', next);
+    window.history.replaceState(null, '', url);
+  }
+
   async function copyDiagnostic() {
     const result = diagnosticResult(lab.diagnostic);
     const d = lab.diagnostic;
@@ -162,7 +183,11 @@ function App() {
   }
 
   return (
-    <div className="site-shell">
+    <div className="site-shell" data-design={design}>
+      <div className="design-compare" role="group" aria-label="五版设计方案">
+        <div className="compare-intro"><strong>H5 DESIGN STUDIES</strong><span>5 版视觉实验 · 滑动并点击比较</span></div>
+        <div className="compare-options">{designs.map((item, index) => <button key={item.id} type="button" className={design === item.id ? 'chosen' : ''} aria-pressed={design === item.id} onClick={() => chooseDesign(item.id)} title={item.description}><span>{String(index + 1).padStart(2, '0')}</span>{item.name}</button>)}</div>
+      </div>
       <header className="topbar">
         <a className="brand" href="#top" aria-label="DOTS CONTINUITY LAB 首页"><span className="brand-dots">●●</span> DOTS<span className="brand-light">/</span>CONTINUITY LAB</a>
         <span className="topbar-meta">独立概念提案 <span aria-hidden="true">✳</span> v0.1 Demo</span>
@@ -214,7 +239,7 @@ function App() {
 
         <section className="closing"><p className="eyebrow">THE PRODUCT QUESTION</p><h2>技术最终应该<br />把什么还给人？</h2><p>不必反复解释自己的目标，也不必把控制权交出去。让复杂性有秩序，让注意力有去处。</p><span>CAPTURE ANYWHERE. CONTINUE ANYWHERE. CREATE WITHOUT STARTING OVER.</span></section>
       </main>
-      <footer className="footer"><span>DOTS CONTINUITY LAB © 2026</span><span>独立概念提案 · 与小红书官方无关 · 全部交互在本地模拟</span><a href="#top">回到顶部 ↑</a></footer>
+      <footer className="footer"><span>DOTS CONTINUITY LAB © 2026</span><span>独立概念提案 · 与小红书官方无关 · 全部交互在本地模拟</span>{design === 'notes' && <a href="https://github.com/esthersjw/esther-design-system" target="_blank" rel="noreferrer">设计参考：ESTHER 不二 · CC BY-NC-SA 4.0 ↗</a>}<a href="#top">回到顶部 ↑</a></footer>
     </div>
   );
 }

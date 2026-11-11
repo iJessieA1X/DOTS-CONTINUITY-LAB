@@ -7,6 +7,8 @@
 
 # DOTS CONTINUITY LAB
 
+> 设计实验分支：5 版 H5 比较、截图与验证见 [DESIGN-STUDIES.md](DESIGN-STUDIES.md)。本分支供 review，公开 Pages 仍使用 `main`。
+
 小红书 App 内置点点与 PC Web 的跨设备用户旅程连续性独立提案。
 
 **核心命题：** Capture → Continue → Create。用户在手机上捕捉想法，换到电脑后能够继续同一目标，保有完整会话、Agent 上下文与任务进度，并能查看和纠正 Agent 的理解。
