@@ -9,6 +9,10 @@
 .compare-options button:hover{background:#34404c}
 .compare-options button.chosen{background:#f9faf8;color:#192028;border-color:#f9faf8}
 .compare-options button:focus-visible{outline:3px solid #f3c550;outline-offset:-3px}
+.mobile-handoff-control{display:none}
+.simulation-note{display:inline-flex;align-items:center;gap:8px;margin:0 0 18px;padding:7px 10px;border:1px solid var(--line);background:var(--soft);color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.02em}
+.simulation-note::before{content:"";width:7px;height:7px;flex:none;border-radius:50%;background:var(--accent)}
+.site-shell[data-design] .device.desktop:focus{outline:3px solid var(--accent);outline-offset:5px}
 
 .site-shell[data-design]{--paper:#f6f6f2;--surface:#fff;--ink:#202530;--muted:#5e6470;--line:#c9cdd3;--accent:#345bc3;--accent-text:#fff;--soft:#eaf0ff;--deep:#202c46;--deep-ink:#fff;background:var(--paper);color:var(--ink);font-family:"Segoe UI Variable","Microsoft YaHei UI","PingFang SC",sans-serif}
 .site-shell[data-design] .topbar{height:66px;background:var(--paper);border-color:var(--line);color:var(--ink)}
@@ -138,10 +142,10 @@
 .site-shell[data-design="notes"] .hero{grid-template-columns:1.25fr .75fr;min-height:575px}
 .site-shell[data-design="notes"] .hero-copy{padding-left:clamp(28px,6.7vw,106px)}
 .site-shell[data-design="notes"] .hero h1 em{background:linear-gradient(transparent 63%,#f4d758 63%);color:var(--ink)}
-.site-shell[data-design="notes"] .hero-art{min-height:575px;background:#f4d758;color:var(--ink);border-left:1px solid #c1a83e}
+.site-shell[data-design="notes"] .hero-art{min-height:575px;background:#f4d758;color:var(--ink);border:clamp(9px,1.2vw,17px) solid #6da8db;border-radius:30px 30px 44px 44px;box-shadow:inset 0 0 0 3px #fff7cf,0 15px 0 #2b7fd826;margin:14px 18px 29px 0}
 .site-shell[data-design="notes"] .hero-art-heading,.site-shell[data-design="notes"] .hero-art-note{color:var(--ink)}
 .site-shell[data-design="notes"] .hero-art-heading span{color:#e84a5f}
-.site-shell[data-design="notes"] .hero-orbit{width:145px;height:125px;border-radius:3px;box-shadow:8px 10px 0 #1a1a2e20;background:var(--surface);color:var(--ink);border-color:#8b7a41}
+.site-shell[data-design="notes"] .hero-orbit{width:145px;height:125px;border-radius:5px 13px 8px 11px;box-shadow:7px 9px 0 #2b7fd82d;background:var(--surface);color:var(--ink);border:2px solid #2b7fd8;transition:transform .22s ease-out,box-shadow .22s ease-out}
 .site-shell[data-design="notes"] .hero-orbit span{color:var(--accent)}
 .site-shell[data-design="notes"] .hero-orbit strong{font-size:22px}
 .site-shell[data-design="notes"] .orbit-one{left:8%;top:27%;transform:rotate(-7deg)}
@@ -150,7 +154,14 @@
 .site-shell[data-design="notes"] .hero-bridge{transform:rotate(-13deg);background:#e84a5f;top:54%}
 .site-shell[data-design="notes"] .hero-bridge::before,.site-shell[data-design="notes"] .hero-bridge::after{background:#e84a5f}
 .site-shell[data-design="notes"] .bridge-dot{background:#e84a5f;animation:none}
-.site-shell[data-design="notes"] .primary-link,.site-shell[data-design="notes"] .action-button{border-radius:12px}
+.site-shell[data-design="notes"] .primary-link,.site-shell[data-design="notes"] .action-button{border-radius:12px 5px 12px 6px;box-shadow:4px 5px 0 #1e5b93}
+.site-shell[data-design="notes"] .primary-link:hover,.site-shell[data-design="notes"] .action-button:hover:not(:disabled){box-shadow:2px 3px 0 #1e5b93;transform:translate(2px,2px);background:#226fb5}
+.site-shell[data-design="notes"] .hero-orbit:hover{transform:rotate(0) translateY(-6px);box-shadow:8px 13px 0 #2b7fd839}
+.site-shell[data-design="notes"] .simulation-note{background:#fff2bf;border-style:dashed;border-color:#d9b942}
+.site-shell[data-design="notes"] .message p{border-radius:4px 13px 6px 11px}
+.site-shell[data-design="notes"] .message-user p{border-radius:13px 4px 11px 6px}
+.site-shell[data-design="notes"] .desktop-context{animation:paper-arrives .38s cubic-bezier(.2,.8,.2,1) both}
+.site-shell[data-design="notes"] .note-ref{border-style:dashed}
 .site-shell[data-design="notes"] .module-nav{gap:10px;border:0;background:transparent}
 .site-shell[data-design="notes"] .module-tab{border:1px solid var(--line);border-radius:2px;min-height:83px;background:var(--surface)}
 .site-shell[data-design="notes"] .module-tab.active{background:#f4d758;color:var(--ink);border-color:#d7b940}
@@ -159,6 +170,7 @@
 .site-shell[data-design="notes"] .device{border-radius:4px}
 .site-shell[data-design="notes"] .closing::after{content:"✳";top:-65px;color:#f4d758}
 .site-shell[data-design="notes"] ::selection{background:#f4d758;color:#1a1a2e}
+@keyframes paper-arrives{from{opacity:.35;transform:translateY(13px) rotate(-1deg)}to{opacity:1;transform:translateY(0) rotate(0)}}
 
 /* 04 — A signal path: the handoff is the visual system, with measured states and contrast. */
 .site-shell[data-design="signal"]{--paper:#101f28;--surface:#172d35;--ink:#edf4ed;--muted:#c0d0cb;--line:#507077;--accent:#e3a25e;--accent-text:#1b2629;--soft:#2c4347;--deep:#0b171d;--deep-ink:#edf4ed}
@@ -229,6 +241,12 @@
   .site-shell[data-design="workbench"] .module-nav{grid-template-columns:repeat(2,1fr)}
   .site-shell[data-design="editorial"] .hero-orbit{height:75px;padding:10px 15px}
   .site-shell[data-design="editorial"] .hero-orbit strong{font-size:20px}
+  .mobile-handoff-control{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 15px;background:var(--soft);color:var(--ink);font-size:12px;font-weight:700}
+  .mobile-handoff-control .action-button{flex:none;min-height:44px}
+  .site-shell[data-design] .handoff-actions .button-row .action-button{display:none}
+  .site-shell[data-design] .device.desktop{scroll-margin-top:90px}
+  .site-shell[data-design="notes"] .hero-art{margin:0 20px 20px}
+  .site-shell[data-design="notes"] .mobile-handoff-control{background:#f4d758;border:1px dashed #2b7fd8;border-radius:5px 12px 5px 12px}
 }
 @media(max-width:570px){
   .site-shell[data-design] .hero h1{font-size:clamp(45px,11.8vw,64px)}
@@ -247,5 +265,30 @@
   .site-shell[data-design="notes"] .module-nav,.site-shell[data-design="calm"] .module-nav{gap:6px}
   .site-shell[data-design] .module-panel{padding:22px 15px}
   .site-shell[data-design] .closing::after{display:none}
+  .site-shell[data-design="notes"] .hero-copy{padding:30px 21px 25px}
+  .site-shell[data-design="notes"] .hero h1{font-size:clamp(38px,10vw,48px);margin-bottom:14px}
+  .site-shell[data-design="notes"] .hero-intro{font-size:13px;line-height:1.5}
+  .site-shell[data-design="notes"] .hero-actions{margin-top:16px;gap:9px}
+  .site-shell[data-design="notes"] .hero-caption{font-size:10px}
+  .site-shell[data-design="notes"] .hero-art{min-height:165px;margin:0 15px 18px;border-width:9px;border-radius:16px 16px 27px 27px}
+  .site-shell[data-design="notes"] .hero-art-heading{top:12px;left:14px;font-size:8px}
+  .site-shell[data-design="notes"] .hero-orbit{width:68px;height:65px;box-shadow:4px 5px 0 #2b7fd82d}
+  .site-shell[data-design="notes"] .hero-orbit strong{font-size:13px}
+  .site-shell[data-design="notes"] .hero-orbit span{font-size:8px;margin-bottom:3px}
+  .site-shell[data-design="notes"] .orbit-one{left:7%;top:35%}
+  .site-shell[data-design="notes"] .orbit-two{left:39%;top:40%}
+  .site-shell[data-design="notes"] .orbit-three{right:5%;top:34%}
+  .site-shell[data-design="notes"] .hero-bridge{top:69%;left:12%;right:12%;transform:none}
+  .site-shell[data-design="notes"] .hero-art-note{display:none}
+  .site-shell[data-design="notes"] .lab-section{padding-top:28px}
+  .site-shell[data-design="notes"] .section-heading{margin-bottom:13px}
+  .site-shell[data-design="notes"] .section-heading h2{font-size:27px;line-height:1.18}
+  .site-shell[data-design="notes"] .section-aside{font-size:11px;margin-top:8px}
+  .site-shell[data-design="notes"] .module-tab{min-height:59px;padding:10px}
+  .site-shell[data-design="notes"] .module-panel{padding:18px 13px}
+  .site-shell[data-design="notes"] .panel-head{margin-bottom:13px}
+  .site-shell[data-design="notes"] .panel-head h3{font-size:25px}
+  .site-shell[data-design="notes"] .simulation-note{font-size:10px;margin-bottom:12px}
+  .site-shell[data-design="notes"] .mobile-handoff-control{flex-direction:column;align-items:stretch;text-align:center}
 }
-@media(prefers-reduced-motion:reduce){.site-shell[data-design] .bridge-dot{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.site-shell[data-design] .bridge-dot,.site-shell[data-design="notes"] .desktop-context{animation:none!important}}
