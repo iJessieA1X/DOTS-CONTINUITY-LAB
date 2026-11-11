@@ -47,10 +47,10 @@ const initialState: LabState = {
 };
 
 const modules: { id: ModuleId; number: string; title: string; label: string }[] = [
-  { id: 'handoff', number: '01', title: 'Conversation Handoff', label: '跨设备接力' },
-  { id: 'continuity', number: '02', title: 'Agent Continuity', label: '三层连续性' },
-  { id: 'diagnostic', number: '03', title: 'Sync Diagnostic', label: '同步诊断' },
-  { id: 'metrics', number: '04', title: 'Metrics Dashboard', label: '价值指标' },
+  { id: 'handoff', number: '01', title: '对话接力', label: '先看手机 → 电脑' },
+  { id: 'continuity', number: '02', title: '目标与任务', label: '后续构想' },
+  { id: 'diagnostic', number: '03', title: '测试记录', label: '手动排查' },
+  { id: 'metrics', number: '04', title: '效果指标', label: '虚构示例' },
 ];
 
 function loadState(): LabState {
@@ -172,11 +172,11 @@ function App() {
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow"><span className="eyebrow-line" /> ONE GOAL. TWO SCREENS.</p>
-            <h1 id="hero-title">点点，<br /><em>不要让我</em><br />重新开始<span className="period">.</span></h1>
-            <p className="hero-intro">手机上捕捉的灵感，回到电脑后应该能继续生长。这里用可操作的 Demo 拆开三件事：<strong>历史、上下文、任务进度。</strong></p>
+            <h1 id="hero-title">点点对话，<br /><em>换到电脑</em><br />能接着聊吗<span className="period">？</span></h1>
+            <p className="hero-intro">这是一个用虚构聊天做的本地演示：<strong>左边是手机，右边是电脑。</strong>点「在电脑继续」，右边就会显示左边的对话和目标。它不连接真实点点账号，也没有修复真实的跨端同步。</p>
             <div className="hero-actions">
-              <a className="primary-link" href="#lab">进入实验室 <span aria-hidden="true">↗</span></a>
-              <span className="hero-caption">不接入点点 · 不收集真实聊天</span>
+              <button className="primary-link" type="button" onClick={() => { resetDemo(); document.getElementById('lab')?.scrollIntoView({ behavior: 'smooth' }); }}>从头看手机 → 电脑演示 <span aria-hidden="true">↗</span></button>
+              <span className="hero-caption">只用示例内容 · 不收集真实聊天</span>
             </div>
           </div>
           <div className="hero-art" aria-hidden="true">
@@ -185,24 +185,24 @@ function App() {
             <div className="hero-orbit orbit-two"><span>02</span><strong>同一段<br />对话</strong></div>
             <div className="hero-orbit orbit-three"><span>03</span><strong>继续<br />完成</strong></div>
             <div className="hero-bridge"><span className="bridge-dot" /></div>
-            <p className="hero-art-note">CONVERSATION ≠ CONTINUITY<br />对话可见，只是接力的起点。</p>
+            <p className="hero-art-note">CONCEPT DEMO · 本地模拟<br />画面展示希望实现的体验，不代表点点现有功能。</p>
           </div>
         </section>
 
         <section className="lab-section" id="lab" aria-labelledby="lab-title">
-          <div className="section-heading"><div><p className="eyebrow">INTERACTIVE PRODUCT DEMO / 01—04</p><h2 id="lab-title">亲手试一遍，<br />哪里断了就会看见。</h2></div><p className="section-aside">所有设备、会话和数据均为本地模拟。研究中的真实点点行为单独记录在项目证据台账里。</p></div>
+          <div className="section-heading"><div><p className="eyebrow">30 秒看懂 / 先试 01</p><h2 id="lab-title">点一下，看看对话<br />怎样从手机接到电脑。</h2></div><p className="section-aside">先看第 01 个演示：点击「在电脑继续」，观察右侧发生什么。其余模块是延伸想法，可以稍后再看。全部内容均为本地模拟。</p></div>
           <nav className="module-nav" aria-label="实验模块">
             {modules.map(item => <button key={item.id} className={`module-tab ${lab.activeModule === item.id ? 'active' : ''}`} type="button" aria-current={lab.activeModule === item.id ? 'page' : undefined} onClick={() => patch({ activeModule: item.id })}><span className="tab-number">{item.number}</span><span><strong>{item.title}</strong><small>{item.label}</small></span></button>)}
           </nav>
 
           {lab.activeModule === 'handoff' && <section className="module-panel" aria-labelledby="handoff-title">
-            <div className="panel-head"><div><p className="eyebrow">01 / 核心旅程</p><h3 id="handoff-title">换设备，继续同一件事。</h3><p>手机先记想法和约束；电脑接回同一会话与上下文，然后继续追问。</p></div><span className="status-pill"><span className={`status-dot ${lab.handoffStep === 1 ? 'pulse' : ''}`} />{stepText}</span></div>
+            <div className="panel-head"><div><p className="eyebrow">01 / 先看这个</p><h3 id="handoff-title">手机里的聊天，电脑接着聊。</h3><p>左侧是一段虚构的手机聊天。点下方按钮后，右侧电脑会出现同一段消息、目标和约束；你还可以继续输入一句。</p></div><span className="status-pill"><span className={`status-dot ${lab.handoffStep === 1 ? 'pulse' : ''}`} />{stepText}</span></div>
             <div className="journey-track" aria-label="接力进度"><div className={lab.handoffStep >= 0 ? 'current' : ''}><span>1</span> 手机捕捉</div><i /><div className={lab.handoffStep >= 2 ? 'current' : ''}><span>2</span> 电脑恢复</div><i /><div className={lab.handoffStep >= 3 ? 'current' : ''}><span>3</span> 继续创作</div></div>
             <div className="devices">
               <div className={`device phone ${activeDevice === 'mobile' ? 'device-active' : ''}`}><div className="device-top"><div><span className="device-icon">▣</span><strong>手机 / 随手记</strong></div><span>源设备</span></div><div className="conversation"><div className="chat-date">周末路线 · 示例会话 #D-204</div>{lab.messages.filter(item => item.origin === 'mobile' || lab.handoffStep >= 2).map(item => <MessageBubble key={item.id} message={item} />)}</div><div className="device-bottom">{activeDevice === 'mobile' ? <Composer value={draft} setValue={setDraft} onSend={sendDemoMessage} label="手机端示例消息" /> : <span>这段会话已随你进入电脑。</span>}</div></div>
               <div className={`device desktop ${activeDevice === 'desktop' ? 'device-active' : ''}`}><div className="device-top"><div><span className="device-icon">▤</span><strong>电脑 / 深度整理</strong></div><span>目标设备</span></div>{lab.handoffStep < 2 ? <div className="desktop-empty"><span className="empty-symbol">↗</span><strong>等你把想法带过来。</strong><p>点击下方「在电脑继续」，体验同一任务的跨端接力。</p></div> : <><div className="desktop-context"><span>CONTEXT SNAPSHOT</span>{lab.layers.context ? <><p><strong>目标</strong>{lab.contextGoal || '尚未填写'}</p><p><strong>约束</strong>{lab.contextConstraint || '尚未填写'}</p></> : <p>上下文层已关闭。目标与约束不会自动恢复。</p>}</div><div className="conversation"><div className="chat-date">同一会话 #D-204 · {lab.layers.history ? '历史已恢复' : '历史层已关闭'}</div>{lab.layers.history ? lab.messages.map(item => <MessageBubble key={item.id} message={item} />) : <div className="missing-layer">会话列表可见，但历史消息没有恢复。试试开启 History 层。</div>}</div><div className="device-bottom"><Composer value={draft} setValue={setDraft} onSend={sendDemoMessage} label="电脑端示例消息" /></div></>}</div>
             </div>
-            <div className="handoff-actions"><div className="bridge-caption"><span className="bridge-icon">↗</span><p><strong>共享的是同一任务，不是相同界面。</strong><br />本地 Demo 用同一份状态模拟跨端接力。</p></div><div className="button-row">{lab.handoffStep === 0 ? <button className="action-button" type="button" onClick={() => patch({ handoffStep: 1 })}>在电脑继续 <span>→</span></button> : lab.handoffStep === 1 ? <button className="action-button" type="button" disabled>正在恢复…</button> : <button className="action-button" type="button" onClick={() => patch({ handoffStep: 0 })}>回到手机 <span>↗</span></button>}<button className="quiet-button" type="button" onClick={resetDemo}>重置演示</button></div></div>
+            <div className="handoff-actions"><div className="bridge-caption"><span className="bridge-icon">↗</span><p><strong>点按钮后看右侧电脑画面。</strong><br />这里模拟理想的接力效果，不会同步真实聊天。</p></div><div className="button-row">{lab.handoffStep === 0 ? <button className="action-button" type="button" onClick={() => patch({ handoffStep: 1 })}>在电脑继续 <span>→</span></button> : lab.handoffStep === 1 ? <button className="action-button" type="button" disabled>正在恢复…</button> : <button className="action-button" type="button" onClick={() => patch({ handoffStep: 0 })}>回到手机 <span>↗</span></button>}<button className="quiet-button" type="button" onClick={resetDemo}>重置演示</button></div></div>
           </section>}
 
           {lab.activeModule === 'continuity' && <section className="module-panel" aria-labelledby="continuity-title"><div className="panel-head"><div><p className="eyebrow">02 / 三层状态</p><h3 id="continuity-title">连续性，不止是聊天记录。</h3><p>逐层关闭，看看用户究竟失去什么。修改上下文后再回到接力模块，它会保留。</p></div><span className="status-pill">LOCAL STATE SAVED</span></div><div className="layer-grid">{(['history', 'context', 'execution'] as Layer[]).map((layer, index) => <button key={layer} className={`layer-card ${lab.layers[layer] ? 'is-on' : 'is-off'}`} type="button" role="switch" aria-checked={lab.layers[layer]} onClick={() => setLab(current => ({ ...current, layers: { ...current.layers, [layer]: !current.layers[layer] } }))}><span className="layer-index">0{index + 1} / {layer.toUpperCase()}</span><span className="layer-switch"><i /></span><strong>{layer === 'history' ? '看见完整过去' : layer === 'context' ? '理解正在做什么' : '接住未完成的事'}</strong><small>{layer === 'history' ? '会话、消息、引用和顺序。' : layer === 'context' ? '目标、约束、来源和待办。' : '任务状态、工具结果与安全检查点。'}</small></button>)}</div><div className="continuity-details"><div className="context-editor"><p className="eyebrow">CONTEXT / 可编辑的理解</p><label htmlFor="context-goal">当前目标</label><textarea id="context-goal" value={lab.contextGoal} onChange={event => patch({ contextGoal: event.target.value })} rows={3} /><label htmlFor="context-constraint">已确认约束</label><textarea id="context-constraint" value={lab.contextConstraint} onChange={event => patch({ contextConstraint: event.target.value })} rows={3} /><p className="field-note">改动只保存在这台浏览器，不会发送给任何服务。</p></div><div className="execution-card"><p className="eyebrow">EXECUTION / 示例任务</p><div className="run-header"><strong>整理三条路线</strong><span className={`run-badge ${lab.runStatus}`}>{lab.runStatus === 'paused' ? '已暂停' : lab.runStatus === 'running' ? '进行中' : lab.runStatus === 'waiting' ? '等你选择' : lab.runStatus === 'completed' ? '已完成' : '失败'}</span></div><ol className="task-list"><li className="done">收集公开笔记 <span>已完成</span></li><li className="done">提取地点与交通 <span>已完成</span></li><li className={lab.runStatus === 'completed' ? 'done' : ''}>比较路线并写稿 <span>{lab.runStatus === 'completed' ? '已完成' : '待继续'}</span></li></ol><p className="checkpoint">Checkpoint · 已保存任务目标和前两步结果。恢复不会重复执行已完成的模拟步骤。</p><div className="run-actions"><button type="button" onClick={() => patch({ runStatus: 'running' })}>运行</button><button type="button" onClick={() => patch({ runStatus: 'paused' })}>暂停</button><button type="button" onClick={() => patch({ runStatus: 'completed' })}>完成</button><button type="button" onClick={() => patch({ runStatus: 'failed' })}>模拟失败</button></div></div></div><div className="impact-strip"><strong>当前接力能力</strong><p>{!lab.layers.history ? '没有历史：用户需要重新讲述对话。' : !lab.layers.context ? '只有历史：Agent 还需重新理解目标。' : !lab.layers.execution ? '保留目标，但未完成任务的状态没有接上。' : '历史、上下文与任务状态都能被接住。'}</p><button className="text-link" type="button" onClick={() => patch({ activeModule: 'handoff' })}>回到接力演示 ↗</button></div></section>}

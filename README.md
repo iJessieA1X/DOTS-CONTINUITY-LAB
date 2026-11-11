@@ -2,6 +2,8 @@
 
 //结论：依托答辩
 
+//说明：以上保留实验原话和评价。实际过程包含妳的实测与取舍；本项目没有接入点点，也没有修复真实跨端同步，H5 只模拟希望看到的接力体验。
+
 
 # DOTS CONTINUITY LAB
 
@@ -23,7 +25,9 @@
 
 在 `app` 目录运行 `npm ci`、`npm run dev`，浏览器打开终端给出的本地地址。生产构建运行 `npm run build`；所有消息、任务状态和指标都是本地模拟，交互状态保存在当前浏览器的 LocalStorage，重置按钮会清除该 Demo 的进度。
 
-四个模块：Conversation Handoff、Agent Continuity、Sync Diagnostic、Metrics Dashboard。真实点点账号、API、聊天数据都不参与演示。
+首次打开时先点「从头看手机 → 电脑演示」，读左侧示例聊天，再点「在电脑继续」观察右侧。两块画面在同一个网页里，只模拟理想流程，并非两台真实设备在同步。
+
+四个模块：对话接力、目标与任务、测试记录、效果指标。真实点点账号、API、聊天数据都不参与演示。
 
 公开 H5 使用 [GitHub Pages 工作流](.github/workflows/pages.yml)，按 `DOTS-CONTINUITY-LAB` 仓库子路径构建；本地 `npm run build` 仍使用根路径。部署方式参照 [Vite 官方说明](https://vite.dev/guide/static-deploy)与 [GitHub Pages 文档](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
 
